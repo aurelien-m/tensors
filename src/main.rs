@@ -1,7 +1,14 @@
-mod aaa;
-use aaa::matrix::Matrix;
+mod tensor;
+
+// #[link(name = "vector_add", kind = "static")]
+// extern "C" {
+//     fn vectorAdd_main();
+// }
 
 fn main() {
-    println!("Hello, world!");
-    let a = Matrix::new(vec![1, 2, 3]);
+    // unsafe {
+    //     vectorAdd_main();
+    // }
+
+    let _ = tensor::Tensor::new(&[1.0, 2.0, 3.0, 4.0]);
 }
