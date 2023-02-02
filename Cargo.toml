@@ -9,3 +9,4 @@ edition = "2021"
 cc = "1.0"
 
 [dependencies]
+rand = "0.8.5"

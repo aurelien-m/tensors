@@ -1,14 +1,8 @@
 mod tensor;
 
-// #[link(name = "vector_add", kind = "static")]
-// extern "C" {
-//     fn vectorAdd_main();
-// }
-
 fn main() {
-    // unsafe {
-    //     vectorAdd_main();
-    // }
-
-    let _ = tensor::Tensor::new(&[1.0, 2.0, 3.0, 4.0]);
+    let a = tensor::Tensor::new(&[1.0, 2.0, 3.0, 4.0]).with_shape(&[2, 2]);
+    let b = tensor::Tensor::new(&[1.0, 2.0, 3.0, 4.0]).with_shape(&[2, 2]);
+    let c = a * b;
+    println!("{}", c);
 }
