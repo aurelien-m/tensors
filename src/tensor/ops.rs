@@ -20,8 +20,6 @@ impl Mul for Tensor {
             multiply_cuda_matrix(&mut self.data, &mut rhs.data, &mut cuda_matrix);
         }
 
-        println!("{}", cuda_matrix.ndims);
-
         Tensor { data: cuda_matrix }
     }
 }

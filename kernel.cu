@@ -79,7 +79,6 @@ extern "C"
         int m = a->dims[1];
         int p = b->dims[1];
 
-        // printf("Multiplying %d x %d matrix with %d x %d matrix.\n", n, m, m, p);
         float *data;
         cudaMalloc((void **)&data, n * p * sizeof(float));
 
@@ -112,8 +111,6 @@ extern "C"
 
         int n = cuda_matrix->dims[0];
         int p = cuda_matrix->dims[1];
-
-        printf("Matrix %d x %d\n", n, p);
 
         float *out_data = (float *)malloc(n * p * sizeof(float));
         cudaMemcpy(out_data, cuda_matrix->data, n * p * sizeof(float), cudaMemcpyDeviceToHost);
