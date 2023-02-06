@@ -6,7 +6,7 @@ fn main() {
         .flag("-cudart=shared")
         .flag("-gencode")
         .flag("arch=compute_75,code=sm_75")
-        .file("kernel.cu")
+        .file("src/tensor/cuda_backend/cuda_matrix.cu")
         .compile("libcuda_utils.a");
 
     /* Link CUDA Runtime (libcudart.so) */

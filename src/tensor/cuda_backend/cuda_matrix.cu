@@ -120,8 +120,10 @@ extern "C"
             {
                 printf("%f ", out_data[i * p + j]);
             }
-            printf("\n");
+            if (i < n - 1)
+                printf("\n");
         }
+        fflush(stdout); // flush stdout to avoid buffering issues with Rust println!
         free(out_data);
 
         return 0;
