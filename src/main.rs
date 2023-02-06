@@ -1,7 +1,8 @@
-mod aaa;
-use aaa::matrix::Matrix;
+mod tensor;
 
 fn main() {
-    println!("Hello, world!");
-    let a = Matrix::new(vec![1, 2, 3]);
+    let a = tensor::Tensor::new(&[1.0, 4.0, 3.0, 4.0]).with_shape(&[2, 2]);
+    let b = tensor::Tensor::new(&[1.0, 2.0, 3.0, 4.0]).with_shape(&[2, 2]);
+    let c = a * b;
+    println!("{}", c);
 }
